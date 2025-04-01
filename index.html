@@ -5,206 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Tiny de Jérémy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #2d3748;
-            color: white;
-            padding: 16px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 16px;
-        }
-
-        section {
-            margin-bottom: 32px;
-            padding: 16px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1,
-        h2 {
-            margin: 0 0 16px;
-        }
-
-        h1 {
-            font-size: 24px;
-        }
-
-        h2 {
-            font-size: 20px;
-            text-align: center;
-            color: #1a202c;
-        }
-
-        p {
-            margin: 0 0 16px;
-            color: #4a5568;
-            text-align: center;
-        }
-
-        /* Styles pour la galerie */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            aspect-ratio: 4/3;
-            background-color: #f0f0f0;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* Modal pour l'image agrandie */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 35px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        .modal-nav button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        footer {
-            background-color: #2d3748;
-            color: white;
-            text-align: center;
-            padding: 16px;
-            margin-top: 32px;
-        }
-
-        /* Modal Styles */
-        #planModal {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #planModal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 8px;
-        }
-
-        #closePlanModal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: white;
-            color: black;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .pdf-section {
-            margin-top: 40px;
-            text-align: center;
-        }
-
-        .pdf-container {
-            width: 100%;
-            height: 600px;
-            margin: 20px auto;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .pdf-container embed {
-            width: 100%;
-            height: 100%;
-        }
-
-        .pdf-download {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #3182ce;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
-
-        .pdf-download:hover {
-            background-color: #2c5282;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -214,11 +15,22 @@
 
     <main>
         <section>
-            <span style="font-size: 16px; color: #4a5568; line-height: 1.5;">
-                Tiny construite en 2023 par un fabricant spécialiste de la région nantaise, situé sur la commune du
-                Bignon.
-            </span>
+            <h3>Prêt pour une Nouvelle Aventure ?</h3>
+            <p class="CTA">
+                Découvrez notre Tiny House moderne et entièrement équipée, construite en 2023 par des experts de la
+                région Nantaise.
+                Idéale pour un mode de vie minimaliste et mobile, elle offre tout le confort nécessaire dans un espace
+                optimisé.
+                <br><br>
+                Imaginez la liberté de vivre où vous le souhaitez, tout en réduisant votre empreinte écologique.
+                <br><br>
+                Ne manquez pas cette opportunité unique de changer de vie et de vous offrir la liberté d'une Tiny House.
+                <br><br>
+                <strong>Parcourez dès aujourd'hui la gallerie photos et la fiche technique de la Tiny !</strong>
+            </p>
         </section>
+
+
 
         <section>
             <h2>Galerie de Photos</h2>
@@ -241,19 +53,20 @@
         </section>
 
         <!-- Section Plan -->
-        <section>
+
+        <section class="pdf-section">
             <h2>Plan de la Tiny House</h2>
             <p>Cliquez sur le plan pour l'agrandir.</p>
-            <div>
-                <img src="/SRC/plan.png" alt="Plan de la Tiny House" id="planImage"
-                    style="cursor: pointer; max-width: 100%; border-radius: 8px;">
+
+            <div class="pdf-container">
+                <!-- Remplacez "SRC/Details_techniques.pdf" par le chemin réel de votre PDF -->
+                <embed src="SRC/plan.pdf" type="application/pdf">
             </div>
-            <div id="planModal"
-                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75);">
-                <img src="/SRC/plan.png" alt="Plan agrandi"
-                    style="max-width: 90%; max-height: 90%; border-radius: 8px;">
-                <button id="closePlanModal">&times;</button>
-            </div>
+
+            <!-- Lien de téléchargement optionnel -->
+            <a href="SRC/plan.pdf" class="pdf-download" download>
+                Télécharger le PDF technique
+            </a>
         </section>
 
         <section class="mb-8">
@@ -262,7 +75,7 @@
                 composent la Tiny et ce pièce par pièce.</p>
             <div class="space-y-4 text-center">
                 <div>
-                    <h3 class="text-lg font-semibold">Cuisine</h3>
+                    <h3>Cuisine</h3>
                     <ul class="list-disc list-inside">
                         <li>1 plaque double feux gaz</li>
                         <li>1 réfrigérateur table top de 91 litres</li>
@@ -271,7 +84,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold">Mezzanines</h3>
+                    <h3>Mezzanines</h3>
                     <ul class="list-disc list-inside">
                         <li>Mezzanine chambre avec lit en 160x200 et rangements muraux</li>
                         <li>Mezzanine Bureau avec rangements, tablette ordinateur intégrée et connectique</li>
@@ -279,7 +92,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold">Salon</h3>
+                    <h3>Salon</h3>
                     <ul class="list-disc list-inside">
                         <li>Banquette mobile double face</li>
                         <li>2 tables rabattables de 90 cm x 60 cm</li>
@@ -289,7 +102,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold">Salle d'eau</h3>
+                    <h3>Salle d'eau</h3>
                     <ul class="list-disc list-inside">
                         <li>Receveur en acrylique 80 x 80cm</li>
                         <li>Porte en verre sérigraphiée de 6mm</li>
@@ -303,7 +116,7 @@
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold">Divers</h3>
+                    <h3>Divers</h3>
                     <ul class="list-disc list-inside">
                         <li>Bardage en Douglas Pré vieilli patiné</li>
                         <li>Toiture en Mauka Line Gris London nervuré (45cm)</li>
@@ -333,27 +146,15 @@
         </section>
 
         <!-- Section Contact -->
-        <section>
-            <h2>Formulaire de Contact</h2>
-            <form action="mailto:TinyJeremy@proton.me" method="post">
-                <div>
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="name" required
-                        style="width: 100%; padding: 8px; margin-bottom: 16px;">
-                </div>
-                <div>
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required
-                        style="width: 100%; padding: 8px; margin-bottom: 16px;">
-                </div>
-                <div>
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" rows="4" required
-                        style="width: 100%; padding: 8px;"></textarea>
-                </div>
-                <button type="submit"
-                    style="background-color: #3182ce; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Envoyer</button>
-            </form>
+        <section style="display: flex; flex-direction: column;">
+            <h2>Contact</h2>
+            <p>Si vous avez des questions ou souhaitez me contacter, je reste à votre disposition par le biais de ce
+                formulaire</p>
+            <button class="email-btn"
+                onclick="window.location.href='mailto:TinyDeJeremy@proton.me?subject=Contact&body=Bonjour,'">
+                Nous contacter
+            </button>
+
         </section>
     </main>
 
