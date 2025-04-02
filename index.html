@@ -5,37 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Tiny du Ponant</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Styles pour le modal qui nécessitent un peu de CSS personnalisé */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content img {
+            max-height: 80vh;
+            max-width: 90vw;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal-nav button {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .modal-nav button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>La Tiny du Ponant</h1>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <header class="bg-green-800 text-white py-8 px-4 text-center">
+        <h1 class="text-4xl font-bold">La Tiny du Ponant</h1>
     </header>
 
-    <main>
-        <section>
-            <h3>Prêt pour une Nouvelle Aventure ?</h3>
-            <p class="CTA">
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 class="text-2xl font-bold text-green-700 mb-4">Prêt pour une Nouvelle Aventure ?</h3>
+            <p class="text-lg leading-relaxed mb-4">
                 Découvrez notre Tiny House moderne et entièrement équipée, construite en 2023 par des experts de la
                 région Nantaise.
                 Idéale pour un mode de vie minimaliste et mobile, elle offre tout le confort nécessaire dans un espace
                 optimisé.
-                <br><br>
+            </p>
+            <p class="text-lg leading-relaxed mb-4">
                 Imaginez la liberté de vivre où vous le souhaitez, tout en réduisant votre empreinte écologique.
-                <br><br>
+            </p>
+            <p class="text-lg leading-relaxed mb-4">
                 Ne manquez pas cette opportunité unique de changer de vie et de vous offrir la liberté d'une Tiny House.
-                <br><br>
-                <strong>Parcourez dès aujourd'hui la gallerie photos et la fiche technique de la Tiny !</strong>
+            </p>
+            <p class="text-lg font-semibold text-green-700">
+                Parcourez dès aujourd'hui la gallerie photos et la fiche technique de la Tiny !
             </p>
         </section>
 
-
-
-        <section>
-            <h2>Galerie de Photos</h2>
-            <p>Cliquez sur une photo pour l'agrandir.</p>
-            <div class="gallery" id="photoGallery">
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-3xl font-bold text-green-700 mb-4">Galerie de Photos</h2>
+            <p class="text-gray-600 mb-6">Cliquez sur une photo pour l'agrandir.</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="photoGallery">
                 <!-- Les images seront ajoutées dynamiquement par JavaScript -->
             </div>
 
@@ -47,36 +93,35 @@
                     <button id="nextImage">&gt;</button>
                 </div>
                 <div class="modal-content">
-                    <img id="expandedImage" src="" alt="Image agrandie">
+                    <img id="expandedImage" src="" alt="Image agrandie" class="mx-auto">
                 </div>
             </div>
         </section>
 
         <!-- Section Plan -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-3xl font-bold text-green-700 mb-4">Plan de la Tiny House</h2>
+            <p class="text-gray-600 mb-6">Cliquez sur le plan pour l'agrandir.</p>
 
-        <section class="pdf-section">
-            <h2>Plan de la Tiny House</h2>
-            <p>Cliquez sur le plan pour l'agrandir.</p>
-
-            <div class="pdf-container">
-                <!-- Remplacez "SRC/Details_techniques.pdf" par le chemin réel de votre PDF -->
-                <embed src="SRC/plan.pdf" type="application/pdf">
+            <div class="pdf-container h-96 mb-4">
+                <embed src="SRC/plan.pdf" type="application/pdf" class="w-full h-full">
             </div>
 
             <!-- Lien de téléchargement optionnel -->
-            <a href="SRC/plan.pdf" class="pdf-download" download>
+            <a href="SRC/plan.pdf" download
+                class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition duration-300">
                 Télécharger le PDF technique
             </a>
         </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4 text-center">Caractéristiques Techniques</h2>
-            <p class="text-2xl mb-4 text-center">Ici sont repris les différents éléments techniques qui
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-3xl font-bold text-green-700 mb-6 text-center">Caractéristiques Techniques</h2>
+            <p class="text-xl text-gray-600 mb-8 text-center">Ici sont repris les différents éléments techniques qui
                 composent la Tiny et ce pièce par pièce.</p>
-            <div class="space-y-4 text-center">
+            <div class="space-y-8">
                 <div>
-                    <h3>Cuisine</h3>
-                    <ul class="list-disc list-inside">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Cuisine</h3>
+                    <ul class="list-disc list-inside space-y-1">
                         <li>1 plaque double feux gaz</li>
                         <li>1 réfrigérateur table top de 91 litres</li>
                         <li>Plan de travail en tripli épicéa 27mm</li>
@@ -84,16 +129,16 @@
                     </ul>
                 </div>
                 <div>
-                    <h3>Mezzanines</h3>
-                    <ul class="list-disc list-inside">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Mezzanines</h3>
+                    <ul class="list-disc list-inside space-y-1">
                         <li>Mezzanine chambre avec lit en 160x200 et rangements muraux</li>
                         <li>Mezzanine Bureau avec rangements, tablette ordinateur intégrée et connectique</li>
                         <li>Zone filet pour se détendre</li>
                     </ul>
                 </div>
                 <div>
-                    <h3>Salon</h3>
-                    <ul class="list-disc list-inside">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Salon</h3>
+                    <ul class="list-disc list-inside space-y-1">
                         <li>Banquette mobile double face</li>
                         <li>2 tables rabattables de 90 cm x 60 cm</li>
                         <li>Zone pour poêle à bois future</li>
@@ -102,8 +147,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h3>Salle d'eau</h3>
-                    <ul class="list-disc list-inside">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Salle d'eau</h3>
+                    <ul class="list-disc list-inside space-y-1">
                         <li>Receveur en acrylique 80 x 80cm</li>
                         <li>Porte en verre sérigraphiée de 6mm</li>
                         <li>Vasque lavabo 60cm</li>
@@ -116,8 +161,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h3>Divers</h3>
-                    <ul class="list-disc list-inside">
+                    <h3 class="text-2xl font-semibold text-green-600 mb-3">Divers</h3>
+                    <ul class="list-disc list-inside space-y-1">
                         <li>Bardage en Douglas Pré vieilli patiné</li>
                         <li>Toiture en Mauka Line Gris London nervuré (45cm)</li>
                         <li>Remorque Jaunin 7m20 x 2m55m en double essieux</li>
@@ -130,35 +175,35 @@
             </div>
         </section>
 
-        <section class="pdf-section">
-            <h2>Détails techniques du constructeur</h2>
-            <p>Document technique fourni par le fabricant</p>
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-3xl font-bold text-green-700 mb-4">Détails techniques du constructeur</h2>
+            <p class="text-gray-600 mb-6">Document technique fourni par le fabricant</p>
 
-            <div class="pdf-container">
-                <!-- Remplacez "SRC/Details_techniques.pdf" par le chemin réel de votre PDF -->
-                <embed src="SRC/FicheTechniqueConstructeur.pdf" type="application/pdf">
+            <div class="pdf-container h-96 mb-4">
+                <embed src="SRC/FicheTechniqueConstructeur.pdf" type="application/pdf" class="w-full h-full">
             </div>
 
             <!-- Lien de téléchargement optionnel -->
-            <a href="SRC/FicheTechniqueConstructeur.pdf" class="pdf-download" download>
+            <a href="SRC/FicheTechniqueConstructeur.pdf" download
+                class="inline-block bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded transition duration-300">
                 Télécharger le PDF technique
             </a>
         </section>
 
         <!-- Section Contact -->
-        <section style="display: flex; flex-direction: column;">
-            <h2>Contact</h2>
-            <p>Si vous avez des questions ou souhaitez me contacter, je reste à votre disposition par le biais de ce
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8 text-center">
+            <h2 class="text-3xl font-bold text-green-700 mb-4">Contact</h2>
+            <p class="text-lg mb-6">Si vous avez des questions ou souhaitez me contacter, je reste à votre disposition
+                par le biais de ce
                 formulaire</p>
-            <button class="email-btn"
-                onclick="window.location.href='mailto:TinyDeJeremy@proton.me?subject=Contact&body=Bonjour,'">
+            <button onclick="window.location.href='mailto:TinyDeJeremy@proton.me?subject=Contact&body=Bonjour,'"
+                class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300">
                 Nous contacter
             </button>
-
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-green-800 text-white py-6 text-center">
         <p>&copy; 2025 La Tiny du Ponant. Tous droits réservés.</p>
     </footer>
 
@@ -222,7 +267,8 @@
                 const img = document.createElement('img');
                 img.src = src;
                 img.alt = `Photo ${index + 1}`;
-                img.loading = "lazy"; // Chargement lazy pour améliorer les performances
+                img.loading = "lazy";
+                img.className = 'w-full h-48 object-cover rounded-lg cursor-pointer hover:opacity-90 transition';
 
                 img.addEventListener('click', () => {
                     currentImageIndex = index;
@@ -237,12 +283,12 @@
             function openModal(src) {
                 expandedImg.src = src;
                 modal.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Empêche le défilement de la page
+                document.body.style.overflow = 'hidden';
             }
 
             function closeImageModal() {
                 modal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Rétablit le défilement
+                document.body.style.overflow = 'auto';
             }
 
             function navigate(direction) {
@@ -275,25 +321,6 @@
                     if (e.key === 'Escape') closeImageModal();
                     if (e.key === 'ArrowLeft') navigate(-1);
                     if (e.key === 'ArrowRight') navigate(1);
-                }
-            });
-
-            // Modale pour le plan (existante)
-            const planImage = document.getElementById('planImage');
-            const planModal = document.getElementById('planModal');
-            const closePlanModal = document.getElementById('closePlanModal');
-
-            planImage.addEventListener('click', () => {
-                planModal.style.display = 'flex';
-            });
-
-            closePlanModal.addEventListener('click', () => {
-                planModal.style.display = 'none';
-            });
-
-            planModal.addEventListener('click', (event) => {
-                if (event.target === planModal) {
-                    planModal.style.display = 'none';
                 }
             });
         });
